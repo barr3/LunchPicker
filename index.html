@@ -11,20 +11,32 @@
         <header>
             <a href="index.html"><h1>NTI Lunch Helper</h1> </a>
             <!--Button to change between the curren location (Craaford/annexet)-->
-            <button type="button" id="loc_button" onclick="toggleAnnexet();">Jag är på annexet</button>
-            <button type="button" id="sort_buton" onclick="sortRest()">Click to sort</button>
 
-            <button onclick="dropDown()" class="dropbtn">Sorting and shit</button>
-            <div id="dropDownMenu" class="dropdown-content">
+            <div id="headerButtons">
 
-                <a onclick="linkClicked()">Sort1</a>
-                <a onclick="linkClicked()">Sort2</a>
-                <a onclick="linkClicked()">Sort3</a>
-                <a onclick="linkClicked()">Sort4</a>
-                <a onclick="linkClicked()">Sort5</a>
+                <select id="sort" onchange="changed()">
+                    <option value="def">SORTERA EFTER</option>
+                    <option value="alpT">Alfabetiskt, A-Z</option>
+                    <option value="alpB">Alfabetiskt, Z-A</option>
+                    <option value="avsT">Avstånd, kortast-längst</option>
+                    <option value="avsB">Avstånd, längst-kortast</option>
+                    <option value="folT">Populärititet, minst-mest</option>
+                    <option value="folB">Populärititet, mest-minst</option>
+                    <option value="matT">Mängd mat, mest-minst</option>
+                    <option value="matB">Mängd mat, minst-mest</optio>
 
+                </select>
+
+                <button type="button" class="dropbtn" id="loc_button" onclick="toggleAnnexet();">Jag är på annexet</button>
 
             </div>
+
+
+
+            <!--
+                 <button type="button" id="sort_buton" onclick="sortRest()">Click to sort</button>
+            -->
+
 
         </header>
 

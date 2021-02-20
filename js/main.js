@@ -76,13 +76,121 @@ function toggleAnnexet() {
 }
 
 
-function sortRest(){
+function sortRest(input){
 
     //Removes all the Restaurant code in index.html so it can be created later
     document.getElementById("0").innerHTML = "";
 
 
     ////////////////////////////////////////////
+
+
+    switch(input){
+
+        case "alpT":
+            //alphabetically A on Top
+
+            list.sort((a,b) => {
+
+                let na = a.namn.toLowerCase(),
+                    nb = b.namn.toLowerCase();
+
+                if (na < nb){
+                    return -1;
+                }
+                if (na > nb) {
+                    return 1;
+                }
+                return 0;
+
+            });
+
+
+            break;
+        case "alpB":
+            //alphabetically A on bot
+
+            list.sort((a,b) => {
+
+                let na = a.namn.toLowerCase(),
+                    nb = b.namn.toLowerCase();
+
+                if (na < nb){
+                    return 1;
+                }
+                if (na > nb) {
+                    return -1;
+                }
+                return 0;
+
+            });
+
+
+            break;
+        case "avsT":
+            //avstånd, kortast avstånd på toppen
+
+            list.sort((a,b) => {
+
+                return a.avstånd - b.avstånd;
+
+            })
+
+            break;
+        case "avsB":
+            //avstånd, kortast avstånd på botten
+
+            list.sort((a,b) => {
+
+                return b.avstånd - a.avstånd;
+
+            })
+
+            break;
+        case "folT":
+            //folk, färst på toppen
+
+            list.sort((a,b) => {
+
+                return a.folk - b.folk;
+
+            })
+
+            break;
+        case "folB":
+            //Folk, färst på botten
+
+            list.sort((a,b) => {
+
+                return b.folk - a.folk;
+
+            })
+
+
+            break;
+        case "matT":
+            //mat, mest mat på toppen
+
+            list.sort((a,b) => {
+
+                return b.mat - a.mat;
+
+            })
+
+            break;
+        case "matB":
+            //mat, mest mat på botten
+
+            list.sort((a,b) => {
+
+                return a.mat - b.mat;
+
+            })
+
+            break;
+    }
+
+
 
     /*
     //Sorterar efter avstånd med kortast avstånd på toppen
@@ -141,7 +249,7 @@ function sortRest(){
     */
 
 
-
+    /*
     //Sorterar alfabetiskt med A på toppen
     list.sort((a,b) => {
 
@@ -157,7 +265,7 @@ function sortRest(){
         return 0;
 
     });
-
+    */
 
     /*
     //Sorterar alfabetiskt med A på toppen
@@ -181,14 +289,16 @@ function sortRest(){
     /////////////////////////////////////////
 
     //Listar namnen
+
+    /*
     list.forEach((e) => {
 
         console.log(`${e.namn} ${e.namn} `);
 
     })
+    */
 
 
-    console.log(list);
 
     //return item1.attr.localeCompare(item2.attr);
 
@@ -211,33 +321,21 @@ function sortRest(){
 
 
 
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
+function changed(){
+
+    var sortSelect = document.getElementById("sort");
+    var selected = sortSelect.options[sortSelect.selectedIndex].value;
+
+    console.log(selected);
+
+    if (selected != "def") {
+        sortRest(selected);
     }
-  }
-}
 
 
-
-
-function dropDown() {
-    console.log("Drop down");
-    document.getElementById("dropDownMenu").classList.toggle("show");
 
 }
 
-
-
-function linkClicked(){
-    console.log("link clicked");
-}
 
 
 
