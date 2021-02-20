@@ -8,9 +8,10 @@ const LOCAL_STORAGE_KEY_NTILH = "app.rests.advanced";
 let rests = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_NTILH)) || [];
 */
 
-let annexet = false;
-var list = []
+let annexet = false; //Sets annexet to false. i.e, Craafords is the default starting location.
+var list = [] //List that contains all the restaurant objects
 
+//Restaurant class
 class Restaurang {
 
     constructor(namn, adress, avstånd ,avståndAnnexet, avståndCraafords, mat, folk, typ, betyg, img_link, img_alt, id){
@@ -30,10 +31,10 @@ class Restaurang {
         this.img_link = img_link;
         this.img_alt = img_alt;
         this.id = id
-
+        this.createRest();
     }
 
-    //Kollar om man är på annexet eller craafords och sätter avstånd beroende på det
+    //Checks wether the user is at craafords och annexet and sets "avstånd" accordingly
     setAvstånd(annexet){
         if (annexet == true) {
             this.avstånd = this.avståndAnnexet;
@@ -44,18 +45,15 @@ class Restaurang {
         }
     }
 
-
-
-    //namn, adress, avstånd, mat, folk, img_link, img_alt
+    //This method creates the restaurant object in the html
     createRest(){
         //this.id++;
         document.getElementById("0").innerHTML += "<div class='restaurang'> <div> <h3>" + this.namn + "</h3> <a href='" + this.adress + "' >Adress</a> <p id='"+ this.id +"'>"+ this.avstånd  + "</p>  <p>"+ this.mat +"</p> <p>"+ this.folk  +"</p> </div> <div> <img src=' "+ this.img_link  +"  ' alt=' "+ this.img_alt+"  '/> </div>  </div>    ";
     }
 
-
-
 }
 
+//Is triggered by the press of the button on the top of the webpage. Toggle the location of the user.
 function toggleAnnexet() {
     if (annexet == true) {
         annexet = false;
@@ -72,13 +70,11 @@ function toggleAnnexet() {
 
 }
 
-//Sveavägen 100
+//Constructs falafelkungen
 let falafelKungen = new Restaurang("Falafelkungen", "http://google.com",420, 500, 1000, 9, 9, "Kebab", 7, "./img/falafelkungen", "bild på falafelkungen", "falafel");
-falafelKungen.createRest();
 list.push(falafelKungen);
-console.log(list);
 
 
+//Constructs mcdonalds
 let mcdonalds = new Restaurang("Mcdonalds", "http://google.com",690, 250, 600, 9, 9, "Hamburgare", 5, "./img/mcdonalds.jpeg", "bild på mcdonalds", "mcdonalds");
-mcdonalds.createRest();
 list.push(mcdonalds);
