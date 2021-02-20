@@ -78,28 +78,14 @@ function toggleAnnexet() {
 
 function sortRest(){
 
-    //console.log("sort pressesd");
-    //document.getElementById("0").innerHTML =""; //Clears the html
-
-    console.log(list);
+    //Removes all the Restaurant code in index.html so it can be created later
+    document.getElementById("0").innerHTML = "";
 
 
-    /*
-    var i;
-    for (i = 0;i < list.length; i++) {
-
-        var ascii = list[i].getName.charCodeAt();
-        console.log(list[i].getName);
-        console.log(ascii);
-
-
-
-    }
-
-    */
+    ////////////////////////////////////////////
 
     /*
-    //Sorterar efter avstånd
+    //Sorterar efter avstånd med kortast avstånd på toppen
     list.sort((a,b) => {
 
         return a.avstånd - b.avstånd;
@@ -107,9 +93,56 @@ function sortRest(){
     })
     */
 
+    /*
+    //Sorterar efter avstånd med kortast avstånd på toppen
+    list.sort((a,b) => {
+
+        return b.avstånd - a.avstånd;
+
+    })
+    */
+
+
+    /*
+    //Sorterar efter antalet människor med minst antal människor på toppen
+    list.sort((a,b) => {
+
+        return a.folk - b.folk;
+
+    })
+    */
+
+    /*
+    //Sorterar efter antalet människor med flest antal människor på toppen
+    list.sort((a,b) => {
+
+        return b.folk - a.folk;
+
+    })
+    */
+
+
+    /*
+    //Sorterar med mest mat på toppen
+    list.sort((a,b) => {
+
+        return b.mat - a.mat;
+
+    })
+    */
+
+    /*
+    //Sorterar med minst mat på toppen
+    list.sort((a,b) => {
+
+        return a.mat - b.mat;
+
+    })
+    */
 
 
 
+    //Sorterar alfabetiskt med A på toppen
     list.sort((a,b) => {
 
         let na = a.namn.toLowerCase(),
@@ -126,11 +159,31 @@ function sortRest(){
     });
 
 
+    /*
+    //Sorterar alfabetiskt med A på toppen
+    list.sort((a,b) => {
+
+        let na = a.namn.toLowerCase(),
+            nb = b.namn.toLowerCase();
+
+        if (na < nb){
+            return 1;
+        }
+        if (na > nb) {
+            return -1;
+        }
+        return 0;
+
+    });
+    */
+
+
+    /////////////////////////////////////////
 
     //Listar namnen
     list.forEach((e) => {
 
-        console.log(`${e.namn} ${e.avstånd} `);
+        console.log(`${e.namn} ${e.namn} `);
 
     })
 
@@ -140,28 +193,58 @@ function sortRest(){
     //return item1.attr.localeCompare(item2.attr);
 
 
-    /*
+
     var i;
     for (i = 0; i < list.length; i++) { //Loops through all the restaurants.
 
         //console.log(list[i].getName);
 
-
+        //Creates the Restaurant code in index.html in the sorted order
+        list[i].createRest();
 
         //console.log(list[i]);
     }
 
-    */
 
+
+}
+
+
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+
+
+
+function dropDown() {
+    console.log("Drop down");
+    document.getElementById("dropDownMenu").classList.toggle("show");
+
+}
+
+
+
+function linkClicked(){
+    console.log("link clicked");
 }
 
 
 
 
 
-
 //Constructs mcdonalds
-let mcdonalds = new Restaurang("Mcdonalds", "http://google.com",690, 250, 600, 9, 9, "Hamburgare", 5, "./img/mcdonalds.jpeg", "bild på mcdonalds", "mcdonalds");
+let mcdonalds = new Restaurang("Mcdonalds", "http://google.com",690, 250, 600, 6, 9, "Hamburgare", 5, "./img/mcdonalds.jpeg", "bild på mcdonalds", "mcdonalds");
 list.push(mcdonalds);
 
 //Constructs falafelkungen
