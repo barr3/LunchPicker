@@ -337,10 +337,6 @@ function changed(){
 }
 
 
-
-
-
-
 //Constructs mcdonalds
 let mcdonalds = new Restaurang("Mcdonalds", "http://google.com",690, 250, 600, 6, 9, "Hamburgare", 5, "./img/mcdonalds.jpeg", "bild på mcdonalds", "mcdonalds");
 list.push(mcdonalds);
@@ -353,5 +349,11 @@ list.push(falafelKungen);
 
 let nybergs = new Restaurang("Nybergs Konditori", "http://biltema.se",0, 50, 300, 8, 5, "Konditori", 9, "./img/nybergs", "bild på nybergs koditori", "nybergs");
 list.push(nybergs);
+
+let subway = new Restaurang("Subway", "http://youtube.com", 0, 100, 400, 6, 10, "Mackor", 7, "./img/subway.jpeg", "bild på subway", "subway");
+list.push(subway);
+
+
+
 
 //console.log(list);
