@@ -9,7 +9,7 @@ let rests = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_NTILH)) || [];
 */
 
 let annexet = false; //Sets annexet to false. i.e, Craafords is the default starting location.
-var list = [] //List that contains all the restaurant objects
+var list = []; //List that contains all the restaurant objects
 
 //Restaurant class
 class Restaurang {
@@ -134,7 +134,7 @@ function sortRest(input){
 
                 return a.avstånd - b.avstånd;
 
-            })
+            });
 
             break;
         case "avsB":
@@ -144,7 +144,7 @@ function sortRest(input){
 
                 return b.avstånd - a.avstånd;
 
-            })
+            });
 
             break;
         case "folT":
@@ -154,7 +154,7 @@ function sortRest(input){
 
                 return a.folk - b.folk;
 
-            })
+            });
 
             break;
         case "folB":
@@ -164,7 +164,7 @@ function sortRest(input){
 
                 return b.folk - a.folk;
 
-            })
+            });
 
 
             break;
@@ -175,7 +175,7 @@ function sortRest(input){
 
                 return b.mat - a.mat;
 
-            })
+            });
 
             break;
         case "matB":
@@ -185,7 +185,7 @@ function sortRest(input){
 
                 return a.mat - b.mat;
 
-            })
+            });
 
             break;
     }
