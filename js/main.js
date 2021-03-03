@@ -2,11 +2,15 @@
 
 
 //Might use local storage later for favorites
-/*
-const LOCAL_STORAGE_KEY_NTILH = "app.rests.advanced";
 
-let rests = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_NTILH)) || [];
-*/
+// const LOCAL_STORAGE_KEY_NTILH = "app.rests.advanced";
+
+// let rests = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_NTILH)) || [];
+
+// localStorage.setItem("mat", "korv");
+
+// console.log(localStorage.getItem("mat"));
+
 
 let annexet = false; //Sets annexet to false. i.e, Craafords is the default starting location.
 var list = []; //List that contains all the restaurant objects
@@ -30,7 +34,7 @@ class Restaurang {
         // this.favorit = favorit; //Bool om restaurangen är en favorit
         this.img_link = img_link;
         this.img_alt = img_alt;
-        this.id = id
+        this.id = id;
         this.createRest();
     }
 
@@ -352,6 +356,40 @@ list.push(nybergs);
 
 let subway = new Restaurang("Subway", "http://youtube.com", 0, 100, 400, 6, 10, "Mackor", 7, "./img/subway.jpeg", "bild på subway", "subway");
 list.push(subway);
+
+
+
+//tested localstorage
+// localStorage.setItem("nybergs", JSON.stringify(nybergs));
+// var test = localStorage.getItem("nybergs");
+// var testTest = JSON.parse(test);
+// console.log(testTest);
+
+storeRestaurant(nybergs);
+retrieveRestaurant(nybergs);
+
+
+function storeRestaurant(restaurant) {
+    
+    localStorage.setItem(restaurant.getName, JSON.stringify(restaurant));
+    
+}
+
+function retrieveRestaurant(restaurant) {
+
+    var temp_var1 = localStorage.getItem(restaurant.getName);
+    var temp_var2 = JSON.parse(temp_var1);
+    console.log("Restaurangen är: ");
+    console.log(temp_var2);
+
+    console.log(temp_var2.namn);
+    
+}
+
+
+
+
+
 
 
 
