@@ -10,7 +10,7 @@ var list = []; //List that contains all the restaurant objects
 //Restaurant class 
 class Restaurang {
 
-	constructor(namn, adress, avståndAnnexet, avståndCraafords, mat, folk, typ, betyg, img_link, img_alt, id) {
+	constructor(namn, adress, avståndAnnexet, avståndCraafords, mat, folk, typ, betyg, img_link, img_alt) {
 
 		this.namn = namn; //Namnet på restaurangen
 		this.adress = adress; //Adress
@@ -26,7 +26,6 @@ class Restaurang {
 		// this.favorit = favorit; //Bool om restaurangen är en favorit
 		this.img_link = img_link; // 
 		this.img_alt = img_alt;
-		this.id = id; //Should be removed later, the id is essentially the same as name.
 		this.createRest(); //adds the restaurant object to html
 	}
 
@@ -40,21 +39,20 @@ class Restaurang {
 	setAvstånd(annexet) {
 		if (annexet == true) {
 			this.avstånd = this.avståndAnnexet;
-			document.getElementById(this.id).innerHTML = this.avstånd;
+			document.getElementById(this.namn).innerHTML = "Avstånd till restaurangen: " + this.avstånd + " m";
 		} else {
 			this.avstånd = this.avståndCraafords;
-			document.getElementById(this.id).innerHTML = this.avstånd;
+			document.getElementById(this.namn).innerHTML = "Avstånd till restaurangen: " + this.avstånd + " m";
 		}
 	}
 
 	//This method creates the restaurant object in the html
 	createRest() {
 		//this.id++;
-		document.getElementById("0").innerHTML += "<div class='restaurang'> <div> <h3>" + this.namn + "</h3> <a href='" + this.adress + "' >Adress</a> <p id='" + this.id + "'> Avstånd till restaurangen:  " + this.avstånd + " m</p>  <p>Mängd mat : " + this.mat + "/10</p> <p>Mängd folk : " + this.folk + "/10</p> </div> <div> <img src=' " + this.img_link + "  ' alt=' " + this.img_alt + "  '/> </div>  </div>    ";
+		document.getElementById("0").innerHTML += "<div class='restaurang'> <div> <h3>" + this.namn + "</h3> <a target=_blank  href='" + this.adress + "' >Adress</a> <p id='" + this.namn + "'> Avstånd till restaurangen:  " + this.avstånd + " m</p>  <p>Mängd mat : " + this.mat + "/10</p> <p>Mängd folk : " + this.folk + "/10</p> </div> <div> <img src=' " + this.img_link + "  ' alt=' " + this.img_alt + "  '/> </div>  </div>    ";
 	}
 
 }
-
 
 
 //Is triggered by the press of the button on the top of the webpage. Toggles the location of the user between "annexet" and "crafoords"
@@ -229,20 +227,20 @@ toggleAnnexet();
 
 
 //Constructs mcdonalds
-let mcdonalds = new Restaurang("Mcdonalds", "http://google.com", 250, 600, 6, 9, "Hamburgare", 5, "./img/mcdonalds.jpeg", "bild på mcdonalds", "mcdonalds");
+let mcdonalds = new Restaurang("Mcdonalds", "https://goo.gl/maps/6fdtrn884mjWvKSD6", 250, 600, 6, 9, "Hamburgare", 5, "./img/mcdonalds.jpeg", "bild på mcdonalds", "mcdonalds");
 list.push(mcdonalds); //Pushes the object to the "list" list
 
 //Constructs falafelkungen
-let falafelKungen = new Restaurang("Falafelkungen", "http://google.com", 500, 1000, 9, 9, "Kebab", 7, "./img/falafelkungen", "bild på falafelkungen", "falafel");
+let falafelKungen = new Restaurang("Falafelkungen", "https://goo.gl/maps/GTb8C43y52GAwtr66", 500, 1000, 9, 9, "Kebab", 7, "./img/falafelkungen", "bild på falafelkungen", "falafel");
 list.push(falafelKungen); //Pushes the object to the "list" list
 
 
 //Constructs nybergs
-let nybergs = new Restaurang("Nybergs Konditori", "http://biltema.se", 50, 300, 8, 5, "Konditori", 9, "./img/nybergs", "bild på nybergs koditori", "nybergs");
+let nybergs = new Restaurang("Nybergs Konditori", "https://goo.gl/maps/5b3GcYfnWdchVHxo8", 50, 300, 8, 5, "Konditori", 9, "./img/nybergs", "bild på nybergs koditori", "nybergs");
 list.push(nybergs); //Pushes the object to the "list" list
 
 //Constructs subway
-let subway = new Restaurang("Subway", "http://youtube.com",  100, 400, 6, 10, "Mackor", 7, "./img/subway.jpeg", "bild på subway", "subway");
+let subway = new Restaurang("Subway", "https://goo.gl/maps/MbfLd3L9kSusRUj66",  100, 400, 6, 10, "Mackor", 7, "./img/subway.jpeg", "bild på subway", "subway");
 list.push(subway); //Pushes the object to the "list" list
 
 

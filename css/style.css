@@ -8,6 +8,10 @@ header a{
     text-decoration: none;
 }
 
+a {
+    color: blue;
+}
+
 .restaurang{
     display: grid;
     grid-template-columns: 1fr 500px;
@@ -71,4 +75,16 @@ body{
     padding-left: 100px;
     padding-right: 100px;
 }
+
+#korv{
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+footer{
+    text-align: center;
+    padding: 50px;
+}
+
 
