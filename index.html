@@ -5,6 +5,11 @@
         <title>NTI Lunch Helper</title>
         <script defer src="./js/main.js"></script>
         <link rel="stylesheet" href="./css/style.css" type="text/css" media="screen" />
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+
+	
     </head>
     <body>
 
@@ -14,7 +19,7 @@
 
             <div id="headerButtons">
 
-                <select id="sort" onchange="changed()">
+                <select id="sort" class="select-css" onchange="changed()">
                     <option value="def">SORTERA EFTER</option>
                     <option value="alpT">Alfabetiskt, A-Z</option>
                     <option value="alpB">Alfabetiskt, Z-A</option>
@@ -27,7 +32,7 @@
 
                 </select>
 
-                <button type="button" class="dropbtn" id="loc_button" onclick="toggleAnnexet();">Jag är på annexet</button>
+                <button type="button" class="button" id="loc_button" onclick="toggleAnnexet();">Jag är på annexet</button>
 		
 
             </div>
