@@ -3,7 +3,12 @@
     <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/hemlig.css" type="text/css" media="screen" />
 	<script defer src="./js/localStorage.js"></script>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+	
 	<title>Hemlig</title>
     </head>
     <body>
@@ -11,8 +16,10 @@
 	<main>
 
 	    <h1> Vänligen fyll i alla fält innan du skickar in. Denna sida är under utveckling och korrekt felhantering är inte fixat ännu!! </h1>
+
+
 	    
-	    <form>
+	    <form id="form">
 
 		<label for="name"> Namn på restaurangen: </label> <br>
 		<input type="text" name="name" id="name" /> <br>
@@ -44,9 +51,13 @@
 		<label for="imgAlt"> Vänligen ange en img alt till bilden på restaurangen </label> <br>
 		<input type="text" name="imgAlt" id="imgAlt" /> <br>
 
-		<button id="submit" onclick="store()"> Skicka in </button>
+		<div class="botbuttons">
+		
+		    <button id="submit" onclick="store()" class="button"> Skicka in </button>
 
-		<button id="testknapp" onclick="clearRestaurants()"> Tryck här för att ta bort restauranger från localStorage </button>
+		    <button id="testknapp" onclick="clearRestaurants()" class="button"> Tryck här för att ta bort restauranger från localStorage </button>
+
+		</div>
 		
 	    </form>
 
