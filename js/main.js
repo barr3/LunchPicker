@@ -3,13 +3,32 @@
 
 //Might use local storage later for favorites
 
-// const LOCAL_STORAGE_KEY_NTILH = "app.rests.advanced";
+const LOCAL_STORAGE_KEY_NTILH = "app.rests";
 
-// let rests = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_NTILH)) || [];
+let rests = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_NTILH)) || [];
 
 // localStorage.setItem("mat", "korv");
 
 // console.log(localStorage.getItem("mat"));
+
+var korv = {namn : "Barre", stad : "Stockholm"};
+
+function storeShit(){
+	localStorage.setItem(LOCAL_STORAGE_KEY_NTILH, JSON.stringify(korv));
+}
+
+function getShit(){
+	let rests = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_NTILH)) || [];
+
+	console.log(rests);
+}
+
+
+
+//var korv = localStorage.getItem("restauranger");
+
+//console.log(korv);
+// console.log(rests);
 
 
 let annexet = false; //Sets annexet to false. i.e, Craafords is the default starting location.
@@ -365,8 +384,8 @@ list.push(subway);
 // var testTest = JSON.parse(test);
 // console.log(testTest);
 
-storeRestaurant(nybergs);
-retrieveRestaurant(nybergs);
+// storeRestaurant(nybergs);
+// retrieveRestaurant(nybergs);
 
 
 function storeRestaurant(restaurant) {
