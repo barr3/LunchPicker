@@ -1,6 +1,8 @@
 :root{
     font-family: 'Roboto', sans-serif;
-    --main-color: palegreen;
+    --main-color: #424874;
+    --accent-color: #a6b1e1;
+    --light-color: #d6e5e3;
 }
 
 header a{
@@ -9,13 +11,13 @@ header a{
 }
 
 a {
-    color: blue;
+    color: var(--main-color);
 }
 
 .restaurang{
     display: grid;
     grid-template-columns: 1fr 500px;
-    background-color: var(--main-color);
+    background-color: var(--light-color);
     padding: 10px;
     margin: 10px;
     border-radius: 25px;
@@ -23,7 +25,7 @@ a {
 }
 
 .button {
-    background-color: var(--main-color);
+    background-color: var(--accent-color);
     border: none;
     color: black;
     padding: 15px 32px;
@@ -47,7 +49,7 @@ select{
     width: 40%;
     appearance: none;
     border:none;
-    background-color: var(--main-color);
+    background-color: var(--accent-color);
     color: black;
     padding: 15px 32px;
     text-align: center;
@@ -72,8 +74,9 @@ button{
 }
 
 body{
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 200px;
+    padding-right: 200px;
+    background-color: var(--main-color);
 }
 
 #korv{

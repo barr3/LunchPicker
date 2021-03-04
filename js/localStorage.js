@@ -11,17 +11,17 @@ function store() {
 	//Takes the values of the fields and assigns them to an appropriate temp variable.
 	var temp_name = document.getElementById("name").value;
 	var temp_adress = document.getElementById("adress").value;
-	var temp_avsAnn = parseInt(document.getElementById("avsAnn").value); //Parse later
-	var temp_avsCra = parseInt(document.getElementById("avsCra").value); //Parse later
-	var temp_mat = parseInt(document.getElementById("mat").value); //Parse later
-	var temp_folk = parseInt(document.getElementById("folk").value); //Parse later
-	var temp_typ = document.getElementById("typ").value;
-	var temp_betyg = document.getElementById("betyg").value;
-	var temp_imgLänk = document.getElementById("imgLänk").value;
-	var temp_imgAlt = document.getElementById("imgAlt").value;
+	var temp_distAnnexet = parseInt(document.getElementById("avsAnn").value); //Parse later
+	var temp_distCrafoords = parseInt(document.getElementById("avsCra").value); //Parse later
+	var temp_food = parseInt(document.getElementById("mat").value); //Parse later
+	var temp_people = parseInt(document.getElementById("folk").value); //Parse later
+	var temp_type = document.getElementById("typ").value;
+	var temp_grade = document.getElementById("betyg").value;
+	var temp_img_link = document.getElementById("imgLänk").value;
+	var temp_img_alt = document.getElementById("imgAlt").value;
 
 	//Creates a object with the values given. 
-	var obj = { name: temp_name, adress: temp_adress, avståndAnnexet: temp_avsAnn, avståndCraafords: temp_avsCra, mat: temp_mat, folk: temp_folk, typ: temp_typ, betyg: temp_betyg, img_link: temp_imgLänk, img_alt: temp_imgAlt };
+	var obj = { name: temp_name, adress: temp_adress, distAnnexet: temp_distAnnexet, distCrafoords: temp_distCrafoords, food: temp_food, people: temp_people, type: temp_type, grade: temp_grade, img_link: temp_img_link, img_alt: temp_img_alt };
 
 	//Makes the object a JSON object.
 	var temp_rest = JSON.stringify(obj);

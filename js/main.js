@@ -10,19 +10,19 @@ var list = []; //List that contains all the restaurant objects
 //Restaurant class 
 class Restaurang {
 
-	constructor(namn, adress, avståndAnnexet, avståndCraafords, mat, folk, typ, betyg, img_link, img_alt) {
+	constructor(name, adress, distAnnexet, distCrafoords, food, people, type, grade, img_link, img_alt) {
 
-		this.namn = namn; //Namnet på restaurangen
+		this.name = name; //Namnet på restaurangen
 		this.adress = adress; //Adress
 
-		this.avståndAnnexet = avståndAnnexet;
-		this.avståndCraafords = avståndCraafords;
-		this.avstånd = avståndAnnexet; //avståndet från annexet eller Craafords
+		this.distAnnexet = distAnnexet;
+		this.distCrafoords = distCrafoords;
+		this.dist = distAnnexet; //avståndet från annexet eller Craafords
 
-		this.mat = mat; //Hur mycket mat på en skala 1-10
-		this.folk = folk; //Hur mycket folk på en skala 1-10
-		this.typ = typ; //Vilken typ av mat. Pizza, kebab, husman, et.c
-		this.betyg = betyg; //Totalt betyg på en skala 1-10
+		this.food = food; //Hur mycket mat på en skala 1-10
+		this.people = people; //Hur mycket folk på en skala 1-10
+		this.type = type; //Vilken typ av mat. Pizza, kebab, husman, et.c
+		this.grade = grade; //Totalt betyg på en skala 1-10
 		// this.favorit = favorit; //Bool om restaurangen är en favorit
 		this.img_link = img_link; // 
 		this.img_alt = img_alt;
@@ -31,25 +31,25 @@ class Restaurang {
 
 	//getter for getting the object name
 	get getName() {
-		return this.namn;
+		return this.name;
 	}
 
 
 	//Checks wether the user is at craafords och annexet and sets "avstånd" accordingly
-	setAvstånd(annexet) {
+	setDist(annexet) {
 		if (annexet == true) {
-			this.avstånd = this.avståndAnnexet;
-			document.getElementById(this.namn).innerHTML = "Avstånd till restaurangen: " + this.avstånd + " m";
+			this.dist = this.distAnnexet;
+			document.getElementById(this.name).innerHTML = "Avstånd till restaurangen: " + this.dist + " m";
 		} else {
-			this.avstånd = this.avståndCraafords;
-			document.getElementById(this.namn).innerHTML = "Avstånd till restaurangen: " + this.avstånd + " m";
+			this.dist = this.distCrafoords;
+			document.getElementById(this.name).innerHTML = "Avstånd till restaurangen: " + this.dist + " m";
 		}
 	}
 
 	//This method creates the restaurant object in the html
 	createRest() {
 		//this.id++;
-		document.getElementById("0").innerHTML += "<div class='restaurang'> <div> <h3>" + this.namn + "</h3> <a target=_blank  href='" + this.adress + "' >Adress</a> <p id='" + this.namn + "'> Avstånd till restaurangen:  " + this.avstånd + " m</p>  <p>Mängd mat : " + this.mat + "/10</p> <p>Mängd folk : " + this.folk + "/10</p> </div> <div> <img src=' " + this.img_link + "  ' alt=' " + this.img_alt + "  '/> </div>  </div>    ";
+		document.getElementById("0").innerHTML += "<div class='restaurang'> <div> <h3>" + this.name + "</h3> <a target=_blank  href='" + this.adress + "' >Adress</a> <p id='" + this.name + "'> Avstånd till restaurangen:  " + this.dist + " m</p>  <p>Mängd mat : " + this.food + "/10</p> <p>Mängd folk : " + this.people + "/10</p> </div> <div> <img src=' " + this.img_link + "  ' alt=' " + this.img_alt + "  '/> </div>  </div>    ";
 	}
 
 }
@@ -66,7 +66,7 @@ function toggleAnnexet() {
 	}
 	var i;
 	for (i = 0; i < list.length; i++) {
-		list[i].setAvstånd(annexet);
+		list[i].setDist(annexet);
 		//console.log(list[i]);
 	}
 
@@ -89,8 +89,8 @@ function sortRest(input) {
 
 			list.sort((a, b) => {
 
-				let na = a.namn.toLowerCase(),
-					nb = b.namn.toLowerCase();
+				let na = a.name.toLowerCase(),
+					nb = b.name.toLowerCase();
 
 				if (na < nb) {
 					return -1;
@@ -109,8 +109,8 @@ function sortRest(input) {
 
 			list.sort((a, b) => {
 
-				let na = a.namn.toLowerCase(),
-					nb = b.namn.toLowerCase();
+				let na = a.name.toLowerCase(),
+					nb = b.name.toLowerCase();
 
 				if (na < nb) {
 					return 1;
@@ -125,62 +125,62 @@ function sortRest(input) {
 
 			break;
 		case "avsT":
-			//avstånd, kortast avstånd på toppen
+			//distance, shortest on top
 
 			list.sort((a, b) => {
 
-				return a.avstånd - b.avstånd;
+				return a.dist - b.dist;
 
 			});
 
 			break;
 		case "avsB":
-			//avstånd, kortast avstånd på botten
+			//distance, shortest on the bottom
 
 			list.sort((a, b) => {
 
-				return b.avstånd - a.avstånd;
+				return b.dist - a.dist;
 
 			});
 
 			break;
 		case "folT":
-			//folk, färst på toppen
+			//amount of people, fewest on the top
 
 			list.sort((a, b) => {
 
-				return a.folk - b.folk;
+				return a.people - b.people;
 
 			});
 
 			break;
 		case "folB":
-			//Folk, färst på botten
+			//amount of people, fewest on the bottom
 
 			list.sort((a, b) => {
 
-				return b.folk - a.folk;
+				return b.people - a.people;
 
 			});
 
 
 			break;
 		case "matT":
-			//mat, mest mat på toppen
+			//amount of food, most food on top
 
 			list.sort((a, b) => {
 
-				return b.mat - a.mat;
+				return b.food - a.food;
 
 			});
 
 			break;
 		case "matB":
-			//mat, mest mat på botten
+			//amount of food, most food on the bottom
 
 			list.sort((a, b) => {
 
-				return a.mat - b.mat;
+				return a.food - b.food;
 
 			});
 
@@ -210,6 +210,7 @@ function changed() {
 	var sortSelect = document.getElementById("sort");
 	var selected = sortSelect.options[sortSelect.selectedIndex].value;
 
+	//Makes sure that the user has selected a sorting option
 	if (selected != "def") {
 		sortRest(selected);
 	}
@@ -257,11 +258,11 @@ if (rests.length != 0) {
 		var list_temp_var = JSON.parse(rests[i]);
 		// console.log(list_temp_var);
 
-		list.push(new Restaurang(list_temp_var.name, list_temp_var.adress,  list_temp_var.avståndAnnexet, list_temp_var.avståndCraafords, list_temp_var.mat, list_temp_var.folk, list_temp_var.typ, list_temp_var.betyg, list_temp_var.img_link, list_temp_var.img_alt, list_temp_var.name));
+		list.push(new Restaurang(list_temp_var.name, list_temp_var.adress,  list_temp_var.distAnnexet, list_temp_var.distCrafoords, list_temp_var.food, list_temp_var.people, list_temp_var.type, list_temp_var.grade, list_temp_var.img_link, list_temp_var.img_alt, list_temp_var.name));
 
 	}
 
-	console.log(list_temp_var);
+	// console.log(list_temp_var);
 
 	// console.log(list_temp_var.name, list_temp_var.adress, 0, list_temp_var.avståndAnnexet, list_temp_var.avståndCraafords, list_temp_var.mat, list_temp_var.folk, list_temp_var.typ, list_temp_var.betyg, list_temp_var.img_link, list_temp_var.img_alt, list_temp_var.name);
 
