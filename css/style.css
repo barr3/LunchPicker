@@ -3,6 +3,7 @@
     --main-color: #182739;
     --accent-color: #1a7c95;
     --light-color: #e9e2b9;
+    
 }
 
 header a{
@@ -23,6 +24,7 @@ a {
     border-radius: 25px;
     color: black;
     box-shadow: 10px 5px 50px 5px black;
+
 }
 
 .button {
@@ -33,8 +35,9 @@ a {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 1.5vw;
     border-radius: 15px;
+    width: 40%;
 }
 
 #headerButtons{
@@ -44,6 +47,10 @@ a {
 
 h1 {
     padding-left: 20px;
+}
+
+a, p {
+    font-size: 1vw;
 }
 
 select{
@@ -60,9 +67,6 @@ select{
     border-radius: 15px;
 }
 
-button{
-    width: 40%;
-}
 
 .restaurang p, .restaurang h3, .restaurang a{
     padding-left: 20px;
@@ -93,3 +97,75 @@ footer{
 }
 
 
+
+@media only screen and (max-width: 1209px){
+
+    .restaurang img{
+	width: 100%;
+	height: 100%;
+	border-radius: 25px;    
+    }
+    
+    .restaurang{
+	display: grid;
+	grid-template-columns: 1fr;
+	background-color: var(--light-color);
+	padding: 10px;
+	margin: 10px;
+	border-radius: 25px;
+	color: black;
+	box-shadow: 10px 5px 50px 5px black;
+	
+    }
+
+    .button {
+	padding: none;
+	text-align: center;
+	font-size: 5vw;
+	border-radius: 15px;
+	width: 100%;
+    }
+    
+    select{
+	width: 100%;
+	appearance: none;
+	color: var(--light-color);
+	padding: none;
+	margin-bottom: 1vw;
+	display: inline-block;
+	font-size: 5vw;
+	border-radius: 15px;
+    }
+
+    
+    #headerButtons{
+	display: flex;
+	flex-direction: column;
+
+    }
+    
+    h1 {
+	text-align: center;
+	font-size: 8vw;
+    }
+
+    h3{
+	font-size: 6vw;
+    }
+
+    option {
+	font-size: 2vw;
+    }
+    
+    a, p {
+	font-size: 5vw;
+    }
+    
+    body{
+	padding-left: 0px;
+	padding-right: 0px;
+	background-color: var(--main-color);
+	color: var(--light-color);
+    }
+    
+}

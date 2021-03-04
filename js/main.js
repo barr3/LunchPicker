@@ -49,7 +49,7 @@ class Restaurang {
 	//This method creates the restaurant object in the html
 	createRest() {
 		//this.id++;
-		document.getElementById("0").innerHTML += "<div class='restaurang'> <div> <h3>" + this.name + "</h3> <a target=_blank  href='" + this.adress + "' >Adress</a> <p id='" + this.name + "'> Avstånd till restaurangen:  " + this.dist + " m</p>  <p>Mängd mat : " + this.food + "/10</p> <p>Mängd folk : " + this.people + "/10</p> </div> <div> <img src=' " + this.img_link + "  ' alt=' " + this.img_alt + "  '/> </div>  </div>    ";
+		document.getElementById("0").innerHTML += "<div class='restaurang'> <div> <h3>" + this.name + "</h3> <a target=_blank  href='" + this.adress + "' >Adress</a> <p id='" + this.name + "'> Avstånd till restaurangen:  " + this.dist + " m</p>  <p>Mängd mat : " + this.food + "/10</p> <p>Mängd folk : " + this.people + "/10</p> <p>Typ av mat: " + this.type + "</div> <div> <img src=' " + this.img_link + "  ' alt=' " + this.img_alt + "  '/> </div>  </div>    ";
 	}
 
 }
