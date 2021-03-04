@@ -10,14 +10,14 @@ var list = []; //List that contains all the restaurant objects
 //Restaurant class 
 class Restaurang {
 
-	constructor(namn, adress, avstånd, avståndAnnexet, avståndCraafords, mat, folk, typ, betyg, img_link, img_alt, id) {
+	constructor(namn, adress, avståndAnnexet, avståndCraafords, mat, folk, typ, betyg, img_link, img_alt, id) {
 
 		this.namn = namn; //Namnet på restaurangen
-		this.adress = adress; //Address
+		this.adress = adress; //Adress
 
 		this.avståndAnnexet = avståndAnnexet;
 		this.avståndCraafords = avståndCraafords;
-		this.avstånd = avstånd; //avståndet från annexet eller Craafords
+		this.avstånd = avståndAnnexet; //avståndet från annexet eller Craafords
 
 		this.mat = mat; //Hur mycket mat på en skala 1-10
 		this.folk = folk; //Hur mycket folk på en skala 1-10
@@ -226,20 +226,20 @@ function changed() {
 
 
 //Constructs mcdonalds
-let mcdonalds = new Restaurang("Mcdonalds", "http://google.com", 690, 250, 600, 6, 9, "Hamburgare", 5, "./img/mcdonalds.jpeg", "bild på mcdonalds", "mcdonalds");
+let mcdonalds = new Restaurang("Mcdonalds", "http://google.com", 250, 600, 6, 9, "Hamburgare", 5, "./img/mcdonalds.jpeg", "bild på mcdonalds", "mcdonalds");
 list.push(mcdonalds); //Pushes the object to the "list" list
 
 //Constructs falafelkungen
-let falafelKungen = new Restaurang("Falafelkungen", "http://google.com", 420, 500, 1000, 9, 9, "Kebab", 7, "./img/falafelkungen", "bild på falafelkungen", "falafel");
+let falafelKungen = new Restaurang("Falafelkungen", "http://google.com", 500, 1000, 9, 9, "Kebab", 7, "./img/falafelkungen", "bild på falafelkungen", "falafel");
 list.push(falafelKungen); //Pushes the object to the "list" list
 
 
 //Constructs nybergs
-let nybergs = new Restaurang("Nybergs Konditori", "http://biltema.se", 0, 50, 300, 8, 5, "Konditori", 9, "./img/nybergs", "bild på nybergs koditori", "nybergs");
+let nybergs = new Restaurang("Nybergs Konditori", "http://biltema.se", 50, 300, 8, 5, "Konditori", 9, "./img/nybergs", "bild på nybergs koditori", "nybergs");
 list.push(nybergs); //Pushes the object to the "list" list
 
 //Constructs subway
-let subway = new Restaurang("Subway", "http://youtube.com", 0, 100, 400, 6, 10, "Mackor", 7, "./img/subway.jpeg", "bild på subway", "subway");
+let subway = new Restaurang("Subway", "http://youtube.com",  100, 400, 6, 10, "Mackor", 7, "./img/subway.jpeg", "bild på subway", "subway");
 list.push(subway); //Pushes the object to the "list" list
 
 
@@ -262,11 +262,11 @@ if (rests.length != 0) {
 		var list_temp_var = JSON.parse(rests[i]);
 		// console.log(list_temp_var);
 
-		list.push(new Restaurang(list_temp_var.name, list_temp_var.adress, 0, list_temp_var.avståndAnnexet, list_temp_var.avståndCraafords, list_temp_var.mat, list_temp_var.folk, list_temp_var.typ, list_temp_var.betyg, list_temp_var.img_link, list_temp_var.img_alt, list_temp_var.name));
+		list.push(new Restaurang(list_temp_var.name, list_temp_var.adress,  list_temp_var.avståndAnnexet, list_temp_var.avståndCraafords, list_temp_var.mat, list_temp_var.folk, list_temp_var.typ, list_temp_var.betyg, list_temp_var.img_link, list_temp_var.img_alt, list_temp_var.name));
 
 	}
 
-	// console.log(list_temp_var);
+	console.log(list_temp_var);
 
 	// console.log(list_temp_var.name, list_temp_var.adress, 0, list_temp_var.avståndAnnexet, list_temp_var.avståndCraafords, list_temp_var.mat, list_temp_var.folk, list_temp_var.typ, list_temp_var.betyg, list_temp_var.img_link, list_temp_var.img_alt, list_temp_var.name);
 
