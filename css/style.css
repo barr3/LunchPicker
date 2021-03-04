@@ -1,12 +1,12 @@
 :root{
     font-family: 'Roboto', sans-serif;
-    --main-color: #424874;
-    --accent-color: #a6b1e1;
-    --light-color: #d6e5e3;
+    --main-color: #182739;
+    --accent-color: #1a7c95;
+    --light-color: #e9e2b9;
 }
 
 header a{
-    color: black;
+    color: var(--light-color);
     text-decoration: none;
 }
 
@@ -21,13 +21,14 @@ a {
     padding: 10px;
     margin: 10px;
     border-radius: 25px;
-    
+    color: black;
+    box-shadow: 10px 5px 50px 5px black;
 }
 
 .button {
     background-color: var(--accent-color);
     border: none;
-    color: black;
+    color: var(--light-color);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -50,7 +51,7 @@ select{
     appearance: none;
     border:none;
     background-color: var(--accent-color);
-    color: black;
+    color: var(--light-color);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -77,12 +78,13 @@ body{
     padding-left: 200px;
     padding-right: 200px;
     background-color: var(--main-color);
+    color: var(--light-color);
 }
 
 #korv{
     text-align: center;
     text-decoration: none;
-    color: black;
+    color: var(--light-color);
 }
 
 footer{
