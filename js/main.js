@@ -5,17 +5,17 @@
 
 const LOCAL_STORAGE_KEY_NTILH = "app.rests";
 
-let rests = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_NTILH)) || [];
+// let rests = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_NTILH)) || [];
 
 // localStorage.setItem("mat", "korv");
 
 // console.log(localStorage.getItem("mat"));
 
-var korv = {namn : "Barre", stad : "Stockholm"};
+// var korv = {namn : "Barre", stad : "Stockholm"};
 
-function storeShit(){
-	localStorage.setItem(LOCAL_STORAGE_KEY_NTILH, JSON.stringify(korv));
-}
+// function storeShit(){
+// 	localStorage.setItem(LOCAL_STORAGE_KEY_NTILH, JSON.stringify(korv));
+// }
 
 function getShit(){
 	let rests = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_NTILH)) || [];

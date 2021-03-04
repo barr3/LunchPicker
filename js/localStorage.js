@@ -1,35 +1,38 @@
 "use strict";
 
 
-var restauranger = [];
+//var restauranger = [];
 
 const LOCAL_STORAGE_KEY_NTILH = "app.rests";
 
-//let rests = JSON.parse(localStorage.geItem(LOCAL_STORAGE_KEY_NTILH)) || [];
+let rests = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_NTILH)) || [];
+
+console.log(rests);
 
 
-class Restaurang {
+//remove later
+// class Restaurang {
 
-	constructor(namn, adress, avståndAnnexet, avståndCraafords, mat, folk, typ, betyg, img_link, img_alt) {
+// 	constructor(namn, adress, avståndAnnexet, avståndCraafords, mat, folk, typ, betyg, img_link, img_alt) {
 
-		this.namn = namn; //Namnet på restaurangen
-		this.adress = adress; //Address
+// 		this.namn = namn; //Namnet på restaurangen
+// 		this.adress = adress; //Address
 
-		this.avståndAnnexet = avståndAnnexet;
-		this.avståndCraafords = avståndCraafords;
-		//this.avstånd  = avstånd; //avståndet från annexet eller Craafords
+// 		this.avståndAnnexet = avståndAnnexet;
+// 		this.avståndCraafords = avståndCraafords;
+// 		//this.avstånd  = avstånd; //avståndet från annexet eller Craafords
 
-		this.mat = mat; //Hur mycket mat på en skala 1-10
-		this.folk = folk; //Hur mycket folk på en skala 1-10
-		this.typ = typ; //Vilken typ av mat. Pizza, kebab, husman, et.c
-		this.betyg = betyg; //Totalt betyg på en skala 1-10
-		// this.favorit = favorit; //Bool om restaurangen är en favorit
-		this.img_link = img_link;
-		this.img_alt = img_alt;
-		this.id = namn;
+// 		this.mat = mat; //Hur mycket mat på en skala 1-10
+// 		this.folk = folk; //Hur mycket folk på en skala 1-10
+// 		this.typ = typ; //Vilken typ av mat. Pizza, kebab, husman, et.c
+// 		this.betyg = betyg; //Totalt betyg på en skala 1-10
+// 		// this.favorit = favorit; //Bool om restaurangen är en favorit
+// 		this.img_link = img_link;
+// 		this.img_alt = img_alt;
+// 		this.id = namn;
 
-	}
-}
+// 	}
+// }
 
 
 function test() {
@@ -76,15 +79,14 @@ function store() {
 
 	var temp_rest = JSON.stringify(obj);
 
-	restauranger.push(temp_rest);
+	rests.push(temp_rest);
 
-	restauranger.push(temp_rest);
-	
-	
+	console.log(rests);
+	localStorage.setItem(LOCAL_STORAGE_KEY_NTILH, JSON.stringify(rests));
 
 	// console.log(restauranger);
 
-	localStorage.setItem(LOCAL_STORAGE_KEY_NTILH, JSON.stringify(restauranger));
+
 	
 	//localStorage.setItem(restauranger, JSON.stringify(restauranger));
 
@@ -124,5 +126,17 @@ function store() {
 // } 
 
 
+// function storeRestaurants(){
+// 	console.log(rests);
+
+// 	localStorage.setItem(LOCAL_STORAGE_KEY_NTILH, JSON.stringify(rests));
+	
+// }
 
 
+function clearRestaurants(){
+
+	rests = [];
+	localStorage.setItem(LOCAL_STORAGE_KEY_NTILH, JSON.stringify(rests));
+	
+}
