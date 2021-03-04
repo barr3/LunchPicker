@@ -1,6 +1,7 @@
 .restaurang{
     display: grid;
     grid-template-columns: 1fr 500px;
+    background-color: paleturquoise;
 }
 
 .restaurang img{

@@ -50,7 +50,7 @@ class Restaurang {
 	//This method creates the restaurant object in the html
 	createRest() {
 		//this.id++;
-		document.getElementById("0").innerHTML += "<div class='restaurang'> <div> <h3>" + this.namn + "</h3> <a href='" + this.adress + "' >Adress</a> <p id='" + this.id + "'>" + this.avstånd + "</p>  <p>" + this.mat + "</p> <p>" + this.folk + "</p> </div> <div> <img src=' " + this.img_link + "  ' alt=' " + this.img_alt + "  '/> </div>  </div>    ";
+		document.getElementById("0").innerHTML += "<div class='restaurang'> <div> <h3>" + this.namn + "</h3> <a href='" + this.adress + "' >Adress</a> <p id='" + this.id + "'> Avstånd till restaurangen:  " + this.avstånd + " m</p>  <p>Mängd mat : " + this.mat + "/10</p> <p>Mängd folk : " + this.folk + "/10</p> </div> <div> <img src=' " + this.img_link + "  ' alt=' " + this.img_alt + "  '/> </div>  </div>    ";
 	}
 
 }
@@ -220,6 +220,9 @@ function changed() {
 
 }
 
+//Fixes bug where the wrong distance is displayed if you dont manually pick a location.
+//Should fix later if I have the time. 
+toggleAnnexet();
 
 //Add all the hardcoded restaurants between the two lines
 //=============================================================================================================================
@@ -245,12 +248,6 @@ list.push(subway); //Pushes the object to the "list" list
 
 
 //=============================================================================================================================
-
-//Fixes bug where the wrong distance is displayed if you dont manually pick a location.
-//Should fix later if I have the time. 
-toggleAnnexet();
-
-
 
 //Extremely messy code, but it works i guess. Runs when the page is initialized.
 //Adds all restaurant objects in localstorage. 
