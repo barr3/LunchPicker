@@ -3,7 +3,7 @@
 const LOCAL_STORAGE_KEY_NTILH = "app.rests";
 
 
-let annexet = true; //Sets annexet to false. i.e, Craafords is the default starting location.
+let annexet = false; //Sets annexet to false. i.e, Craafords is the default starting location.
 var list = []; //List that contains all the restaurant objects
 
 
@@ -69,7 +69,11 @@ function toggleAnnexet() {
 		list[i].setDist(annexet);
 		//console.log(list[i]);
 	}
+    //Updates the sorting with the new position.
+    changed();
 
+   
+    
 }
 
 //Sorts the restaurants depending on what the user chooses
@@ -241,7 +245,7 @@ let nybergs = new Restaurang("Nybergs Konditori", "https://goo.gl/maps/5b3GcYfnW
 list.push(nybergs); //Pushes the object to the "list" list
 
 //Constructs subway
-let subway = new Restaurang("Subway", "https://goo.gl/maps/MbfLd3L9kSusRUj66",  100, 400, 6, 10, "Mackor", 7, "./img/subway.jpeg", "bild på subway", "subway");
+let subway = new Restaurang("Subway", "https://goo.gl/maps/MbfLd3L9kSusRUj66",  100, 200, 6, 10, "Mackor", 7, "./img/subway.jpeg", "bild på subway", "subway");
 list.push(subway); //Pushes the object to the "list" list
 
 
