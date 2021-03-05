@@ -1,17 +1,29 @@
 #+TITLE: Projekt3
 
-* HTML
+*Projekt 3*
+Nils Blomberg
 
-* CSS
+[[https:github.com/barr3?tab=repositories][Github Repo]]
+[[https:barr3.github.io/LunchPicker/][Github Pages]]
 
-* JS
+* *Projektbeskrivning*
+Jag har gjort en sida som är till för NTI-Elever där sidan visar vilka restauranger som finns på matkortet, vilka restauranger som är närmast, vilka restauranger som har mest mat et.c. På sidan kan man välja hur man vill sortera samt välja om man är på annexet eller på Crafoords väg. Jag började projektet med att göra en annan sida. Den sidan var tänkt att göra till en kompis som behövde en sida till sitt företag. Jag valde dock att skrota idén eftersom jag ville lära mig att använda JavaScript. Efter några veckor av att försöka komma på vad jag skulle göra för projekt så fick jag idén för att göra den här sidan. Utan några som helst skissar eller moodboards eller annan inspiration satte jag genast igång. Jag började med att bara lägga in en restaurang i html för att sätta upp en basic CSS-grid. Sedan gjorde jag en restaurang-klass för att enkelt kunna lägga in flera restauranger och få dem att visas upp på sidan. Efter det la jag till så att jag kunde sortera restaurangerna efter olika kriterier. Efter det tyckte jag att jag var klar men jag bestämde mig för att implementera localStorage för att jag hade tråkigt på lovet och för att jag kände att jag behövde lite utmaning. Jag gjorde då en sida som heter hemlig.html (gå gärna in och prova att använd den) där man kunde skriva in restauranger för att sedan få in dem på sidan utan att behöva lägga in separate objekt i JavaScript-koden. Efter att ha fått detta att fungera så bestämde jag mig för att lägga till styling på sidan, något jag inte hade tänkt göra alls från början.  
+* *Automatiska tester*
+** Performance 
+När det kommer till performance ser det helt ok ut. Jag fick 82/100 på performance. I google lighthouse fanns det två bildrelaterade problem, vilket jag tar upp i "Best practices". Jag skulle gissa att faktumet att programmet läser in från localStorage varje gång sidan uppdateras är rätt så performance-krävande, dock verkar jag inte få någon indikation på att det skulle vara så i lighthouse. Förutom det verkar det som att mitt sätt att sortera restaurangerna (ta bort dem och lägga till igen i rätt ordning) är en del av problemet. Jag fick också upp "Serve static assets with an efficient cache policy" vilket jag inte förstod, även efter lite lätt läsande av dokumentationen. 
+** Accessability
+På accessability fick jag 91, vilket jag skulle säga jag är rätt så nöjd med. I lighthouse fick jag två problem. Det första problemet jag fick var att bakgrundsfärgen och textfärgen inte är tillräckligt kontrastande i knapparna längst upp på sidan. Detta fixade jag enkelt genom att istället byta textfärgen till svart (jag tyckte dock att den vita textfärgen såg lite bättre ut). Det andra problemet var "Heading elements are not in a sequentially-descending order", alltså att jag hade skippat h2 och istället gått direkt från h1 till h3 av någon anledning. Detta skulle också vara väldigt enkelt att fixa, men jag tycker att det skulle kunna förstöra i stylingen osv. Dessutom skulle jag nog prioritera prestanda över att ändra det här. 
+** Best practices
+I best practices fick jag 80. Det första problemet jag fick var "Links to vross-origin destinations are unsafe", vilket lätt fixas genom att lägga till 'rel="noopener"' till länkarna i min kod (det var länkarna till google maps-sidorna som man kommer till när man trycker på "adress" på en restaurang.). Det andra problemet, som jag också fick upp i performance hade med bilderna att göra. Det första var att jag hade fel aspect ratio på bilderna. Detta hände på grund av att jag hade satt alla bilder till att ha samma aspect ratio i början av projektet bara för att göra det lite enklare för mig. Det andra problemet med bilderna var att de hade för dålig upplösning. Problemet jag hade med bilderna i "Performance" var att det var en bild som hade ett utdaterat filformat. Om jag skulle göra den här sidan "på riktigt" skulle jag såklart ha bra bilder med hög upplösning och samma aspect ratio, så jag skulle inte riktigt säga att det är ett problem i det här fallet. 
+** SEO
+På SEO fick jag upp tre problem. Två som handlade om interoperabilitet med mobilitelefoner, och en om "best practices". Det första problemet var att jag saknade en "<meta name='viewport'>"-tag, något jag kunde lägga till väldigt snabbt. Sedan stod ett problem om att vissa typsnitt var mindre än 12px på mobila enheter. Detta skulle vara rätt så lätt att fixa, men eftersom alla typsnitt ser bra ut på mobila enheter för mig skulle jag säga att detta inte är ett så prioriterat problem. Till sist så stod det att jag saknade en meta-description. Jag lade till en meta-description, men eftersom vi inte har gått igenom vad en "bra" meta-description är så jag skrev bara lite text som en placeholder.
 
-* Uppsats internets historia
-** Krav:
-*** TODO ca.600 ord
-*** TODO Berätta om webbens historia
-*** TODO Beskriv tekniken som möjliggör webben
-*** TODO Vilka problem har lösts/skapat
-**** Skapat
-**** Löst
-*** TODO Nyanserat
+* *Manuella tester av tillgänglighet*
+Det mesta av det som tillfrågades, exempel om alla rubriker är i ordning, hade redan kommit upp på automatiska tester så jag ändrade inget efter dessa tester.
+* *Manuella tester av interoperabilitet och responsivitet*
+
+Jag skulle säga att interoperabiliteten och responsiviteten ser bra ut. Dock hade jag från början bara en media query. Då var texten bra på mobila enheter, men för liten på datorn när jag gjorde webbläsaren lite smalare. Detta löste jag helt enkelt genom att lägga till en media-query. Även om repsonsiviteten var en eftertanke även i detta projekt så är jag väldigt nöjd med min sida. 
+
+
+* *Omdöme* 
+Jag är faktiskt väldigt nöjd med mitt arbete. Från början hade jag som sagt inte tänkt att styla sidan särskilt mycket men efter att ha gjort det är jag väldigt nöjd med utseendet. När det kommer till funktionalitet så är jag också väldigt nöjd med tanke på att jag inte har använt några tutorials alls (förutom lite lätt stack overflow). Dock är jag inte helt säker på om min kod är särskilt optimerad om jag skulle lägga in fler objekt. Ett exempel är när man sorterar alla restauranger så tar den bort alla restauranger i html-koden och stoppar sedan in de igen fast i en ny ordning. Jag tycker att kvaliteten på båden sidan och koden känns väldigt bra, även om jag själv skulle säga att koden är lite svårläst. Något jag skulle vilja ha gjort bättre är att man lättare kan se vilken plats man är på just nu (annexet eller crafoords) men jag kunde inte komma på hur jag skulle implementera detta på ett snyggt sätt. Som det ser ut nu är det lite svårt att se vilken plats man är på och det är också lite svårt att förstå att man kan trycka på knappen uppe till höger på sidan för att byta plats. Generellt skulle jag säga att jag nu känner mig väldigt trygg med webbutveckling. 
