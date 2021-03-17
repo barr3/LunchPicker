@@ -7,6 +7,8 @@ let annexet = false; //Sets annexet to false. i.e, Craafords is the default star
 var list = []; //List that contains all the restaurant objects
 
 
+alert("OBS!! Den här sidan använder localStorage.");
+
 //Restaurant class 
 class Restaurang {
 
